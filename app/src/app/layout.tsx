@@ -34,8 +34,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Cogni",
-  description: "Web3 Gov + Web2 AI",
+  title: "cogni/blue — autonomous AI blue team for the Cogni DAO",
+  description:
+    "A non-stop, AI-run blue team for the Cogni DAO collective. Continuously evaluating, hardening, and improving the node-template and every node in the network against an ever-growing AI security threat — because nearly all of our code is AI-generated too.",
 };
 
 // See operator/app/src/app/layout.tsx for rationale — `headers()` in the
