@@ -3,9 +3,9 @@
 
 /**
  * Module: `@features/home/components/BlueOpsSection`
- * Purpose: Homepage section describing cogni/blue's operating loop — the
- *   continuous evaluate → harden → improve cycle the node runs over the
- *   node-template and the rest of the network.
+ * Purpose: Homepage section framing cogni/blue's operating loop in real
+ *   blue-team terms — detect (monitoring + detection engineering), hunt
+ *   (hypothesis-driven threat hunting), harden (push fixes into the template).
  * Scope: Homepage only. Static, no data fetching.
  * Invariants: Token-driven colors only; responsive grid.
  * Side-effects: none
@@ -13,78 +13,73 @@
  * @public
  */
 
-import { ArrowRight, ScanSearch, ShieldCheck, Wrench } from "lucide-react";
+import { Crosshair, Radar, ShieldCheck } from "lucide-react";
 import type { ReactElement } from "react";
 
 interface OpsStep {
-  icon: typeof ScanSearch;
+  icon: typeof Radar;
   title: string;
   body: string;
 }
 
 const STEPS: OpsStep[] = [
   {
-    icon: ScanSearch,
-    title: "Evaluate",
-    body: "Read every node like an attacker would. Probe prompts, tools, contracts, and AI-written code for the weakness that ships silently.",
+    icon: Radar,
+    title: "Detect",
+    body: "Continuous monitoring and detection engineering on every node — surface indicators of compromise before they spread.",
   },
   {
-    icon: Wrench,
-    title: "Harden",
-    body: "Turn each finding into a fix or a guardrail — patches, gates, and rules that land in the node-template so the whole network inherits the defense.",
+    icon: Crosshair,
+    title: "Hunt",
+    body: "Hypothesis-driven threat hunting through AI-written code: assume breach, chase the weakness an attacker reaches for, map it to MITRE ATT&CK.",
   },
   {
     icon: ShieldCheck,
-    title: "Improve",
-    body: "Re-test, measure, repeat. Every loop raises the floor for the next red-team move — and the next AI-generated commit.",
+    title: "Harden",
+    body: "Every confirmed finding becomes a guardrail in the node-template — patched and gated, so the whole network inherits the fix.",
   },
 ];
 
 export function BlueOpsSection(): ReactElement {
   return (
-    <section className="w-full border-border border-t bg-background py-16 md:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section className="w-full border-border border-t bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-bold text-3xl text-foreground tracking-tight sm:text-4xl">
-            One loop, running forever
+            Defense on a loop
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Nearly all Cogni code is AI-generated — which means it is fast,
-            plentiful, and quietly vulnerable. Blue closes that gap on a loop
-            that never stops.
+            Nearly all Cogni code is machine-written — fast, plentiful, and
+            quietly vulnerable. Blue never stops closing the gap.
           </p>
         </div>
 
-        <ol className="mt-14 grid gap-6 md:grid-cols-3">
+        <ol className="mt-14 grid gap-5 md:grid-cols-3">
           {STEPS.map((step, i) => (
             <li
               key={step.title}
-              className="relative rounded-2xl border border-border bg-card/40 p-8"
+              className="rounded-2xl border border-border bg-card/40 p-7"
             >
-              <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <step.icon className="size-6" aria-hidden="true" />
+              <div className="mb-5 inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <step.icon className="size-5" aria-hidden="true" />
               </div>
-              <h3 className="flex items-center gap-2 font-semibold text-foreground text-xl">
-                <span className="font-mono text-muted-foreground/60 text-sm">
+              <h3 className="flex items-baseline gap-2 font-semibold text-foreground text-xl">
+                <span className="font-mono text-muted-foreground/50 text-sm">
                   0{i + 1}
                 </span>
                 {step.title}
               </h3>
-              <p className="mt-3 text-muted-foreground leading-relaxed">
+              <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
                 {step.body}
               </p>
             </li>
           ))}
         </ol>
 
-        <div className="mt-10 flex items-center justify-center gap-3 text-muted-foreground text-sm">
-          <span className="font-mono uppercase tracking-widest">
-            Blue team
-          </span>
-          <ArrowRight className="size-4 text-primary" aria-hidden="true" />
-          <span className="font-mono uppercase tracking-widest">
-            Red team — coming soon
-          </span>
+        <div className="mt-12 flex items-center justify-center gap-3 font-mono text-muted-foreground/70 text-xs uppercase tracking-widest">
+          <span className="text-primary">Blue team: live</span>
+          <span aria-hidden="true">//</span>
+          <span>Red team: inbound</span>
         </div>
       </div>
     </section>

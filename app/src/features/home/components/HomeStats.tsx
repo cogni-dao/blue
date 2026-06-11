@@ -24,10 +24,10 @@ interface StatItem {
 }
 
 const STATS: StatItem[] = [
-  { value: "24/7", label: "Autonomous Watch" },
-  { value: "∞", label: "Hardening Loops" },
-  { value: "100%", label: "AI-Code Under Review" },
-  { value: "0", label: "Red Teams — For Now" },
+  { value: "24/7", label: "Continuous Watch" },
+  { value: "100%", label: "AI-Code In Scope" },
+  { value: "ATT&CK", label: "Mapped Detections" },
+  { value: "0", label: "Breaches, So Far" },
 ];
 
 export function HomeStats(): ReactElement {
