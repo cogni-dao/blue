@@ -14,6 +14,7 @@
 import { redirect } from "next/navigation";
 import type { ReactElement } from "react";
 
+import { BlueOpsSection } from "@/features/home/components/BlueOpsSection";
 import { HomeStats } from "@/features/home/components/HomeStats";
 import { NewHomeHero } from "@/features/home/components/NewHomeHero";
 import { getServerSessionUser } from "@/lib/auth/server";
@@ -30,6 +31,7 @@ export default async function HomePage(): Promise<ReactElement> {
     <div className="flex min-h-screen flex-col">
       <AuthRedirect />
       <NewHomeHero />
+      <BlueOpsSection />
       <HomeStats />
     </div>
   );

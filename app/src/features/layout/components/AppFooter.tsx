@@ -11,7 +11,7 @@
  * @public
  */
 
-import Image from "next/image";
+import { ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import type { ReactElement } from "react";
 
@@ -26,16 +26,17 @@ export function AppFooter(): ReactElement {
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/TransparentBrainOnly.png"
-                alt="Cogni"
-                width={24}
-                height={24}
+              <ShieldCheck
+                className="size-6 text-primary"
+                aria-hidden="true"
               />
-              <span className="font-bold text-gradient-accent">Cogni</span>
+              <span className="font-bold">
+                cogni
+                <span className="text-gradient-accent">/blue</span>
+              </span>
             </Link>
             <p className="mt-3 text-muted-foreground text-sm">
-              Web3 Gov + Web2 AI
+              Autonomous AI blue team for the Cogni DAO
             </p>
           </div>
 

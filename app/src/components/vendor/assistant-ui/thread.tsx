@@ -102,11 +102,11 @@ const ThreadWelcome: FC = () => {
       <div className="aui-thread-welcome-center flex w-full grow flex-col items-center justify-center">
         <div className="aui-thread-welcome-message flex size-full flex-col justify-center px-8">
           <div className="aui-thread-welcome-message-inner fade-in slide-in-from-bottom-2 animate-in font-semibold text-2xl duration-300 ease-out">
-            What do you want to build together?
+            What should we harden today?
           </div>
           <div className="aui-thread-welcome-message-inner fade-in slide-in-from-bottom-2 animate-in text-2xl text-muted-foreground/65 delay-100 duration-300 ease-out">
-            Start a project, join one, or ship a change—Cogni helps with the
-            next step.
+            Surface a risk, review a node, or pressure-test a change—Blue takes
+            the next step.
           </div>
         </div>
       </div>
@@ -119,15 +119,16 @@ const ThreadSuggestions: FC = () => {
     <div className="aui-thread-welcome-suggestions grid w-full grid-cols-1 gap-2 pb-2 sm:grid-cols-2">
       {[
         {
-          title: "Dream of",
-          label: "a community-owned project",
+          title: "Audit",
+          label: "this node's attack surface",
           action:
-            "Dream of a community-owned AI, serving one random niche of your choice",
+            "Audit cogni/blue's attack surface and list the top risks in our AI-generated code",
         },
         {
-          title: "Tell me about",
-          label: "the builders behind cogni",
-          action: "Tell me about the builders behind Cogni",
+          title: "Show me",
+          label: "what blue has hardened",
+          action:
+            "Show me what the blue team has recently hardened across the Cogni node network",
         },
       ].map((suggestedAction, index) => (
         <div
