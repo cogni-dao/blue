@@ -71,8 +71,8 @@ function mapError(e: unknown): NextResponse {
   if (e instanceof DomainNotRegisteredError)
     return NextResponse.json({ error: e.message }, { status: 400 });
   // A cite/EDO edit whose target resolves on neither the branch nor main, or
-  // whose edge type doesn't match the cited entry_type, is a client error â
-  // never a 500 (bug.5024). The cross-plane (main âª branch) resolution lives in
+  // whose edge type doesn't match the cited entry_type, is a client error —
+  // never a 500 (bug.5024). The cross-plane (main ∪ branch) resolution lives in
   // the adapter; these map the genuinely-absent / mistyped cases to typed 4xx.
   if (e instanceof CitationTargetNotFoundError)
     return NextResponse.json(
