@@ -9,19 +9,27 @@
 
 schema_version: "0.1.4"
 
-node_id: "b927a9dd-6132-4fc9-a51e-e3cee2568e3c"
-scope_id: "b44d4394-3147-5787-acab-51546be6a3da"
+node_id: "da3777a6-1f33-463a-a73c-70924806da50"
+scope_id: "6ad45f62-1df4-533f-bf58-7f58d5439715"
 scope_key: "default"
 
 intent:
-  name: node-template
-  # `mission` is your node's one-line identity — surfaced at the top of every
-  # agent's session cognition (the node's reason to exist). Forkers: replace the
-  # default below with your node's actual mission (what it does + why it matters).
-  mission: "A Cogni node — a web3-governed, AI-powered organization with its own mission, built on the shared operator substrate."
+  name: blue
 
 cogni_dao:
-  chain_id: "8453" # Base mainnet
+  dao_contract: "0x9174eb38ddbb571291a29342631f2c5c91f485d9"
+  plugin_contract: "0xde1ab3786843b2e839431de53bc4c08bbd756866"
+  signal_contract: "0x4ddbf41602734aeced47e0050b6cc7865cb476c7"
+  chain_id: "8453"
+
+knowledge:
+  database: "knowledge_blue"
+  remote:
+    provider: dolthub
+    owner: "cogni-dao"
+    repo: "knowledge-blue"
+    url: "https://doltremoteapi.dolthub.com/cogni-dao/knowledge-blue"
+    custody: cogni-owned
 
 # Activity ledger ingestion + approver allowlist.
 # `approvers` gates the `(admin)/` route group and write routes under
@@ -34,7 +42,7 @@ activity_ledger:
   activity_sources:
     github:
       attribution_pipeline: cogni-v0.0
-      source_refs: ["Cogni-DAO/standalone-node"]
+      source_refs: ["Cogni-DAO/blue"]
 
 payments:
   status: pending_activation
