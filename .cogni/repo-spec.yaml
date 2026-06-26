@@ -15,6 +15,11 @@ scope_key: "default"
 
 intent:
   name: blue
+  hook: "The network's blue team"
+  mission: "Defensive security for the Cogni network — harden systems, detect intrusions, and keep defenders ahead. The blue team to red's offense."
+  brand:
+    icon: "Shield"
+    color: "#3b82f6"
 
 cogni_dao:
   dao_contract: "0x9174eb38ddbb571291a29342631f2c5c91f485d9"
