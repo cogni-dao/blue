@@ -21,7 +21,7 @@ intent:
     icon: "Shield"
     color: "#3b82f6"
 
-cogni_dao:
+governance:
   dao_contract: "0x9174eb38ddbb571291a29342631f2c5c91f485d9"
   plugin_contract: "0xde1ab3786843b2e839431de53bc4c08bbd756866"
   signal_contract: "0x4ddbf41602734aeced47e0050b6cc7865cb476c7"
