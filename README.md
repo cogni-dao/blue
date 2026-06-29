@@ -59,5 +59,3 @@ The operator keeps every node aligned with `node-template` automatically (a GitH
 | **3 — Your node** | `app/src/app/(public)/**`, `app/src/features/home/**`, branding/theme, `.cogni/repo-spec.yaml`, `.cogni/persona/**` | **Never synced** — build your node's identity, homepage, and features here in stability. |
 
 The Tier-3 carve-out is declared in `.cogni/sync-manifest.yaml#node_local` (data, not hardcoded), so the boundary moves with the template. Full contract: the operator knowledge entry `node-template-sync-contract`.
-
-<!-- rollpoke: pick up EVM_RPC_URL secret (Reloader-prod dead, bug.5040) -->
